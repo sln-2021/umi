@@ -106,8 +106,34 @@ const Login: React.FC = () => {
               },
             }}
           >
-              <ProFormText width="md" name="name" label="name" />
-              <ProFormText.Password width="md" name="password" label="password" />
+            <ProFormText
+              fieldProps={{
+                size: 'large',
+                prefix: <UserOutlined />,
+              }}
+              name="username"
+              placeholder="请输入用户名"
+              rules={[
+                {
+                  required: true,
+                  message: '请输入用户名!',
+                },
+              ]}
+            />
+            <ProFormText.Password
+              fieldProps={{
+                size: 'large',
+                prefix: <LockOutlined />,
+              }}
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: '请输入密码',
+                },
+              ]}
+              placeholder="请输密码"
+            />
           </ProForm>
         </div>
       </div>
